@@ -11,42 +11,54 @@
   <title>Isha Chhabra | Cognitive Neuroscientist</title>
 
   <!-- ===== Fonts & Styles ===== -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ===== Header / Navigation ===== -->
-<header>
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- ===== Hero Section ===== -->
   <section class="hero">
-    <div class="hero-content">
-      <img src="profile.jpg" alt="Isha Chhabra portrait" />
-      <h1>Isha Chhabra</h1>
-      <p>Cognitive Neuroscientist | Ph.D. Candidate at the University of Oregon<br />
-         Exploring memory, fMRI multimodal dataset, aphantasia, and hippocampal subregions.</p>
+    <div class="hero-container">
+
+      <!-- Large Photo Left -->
+      <div class="hero-image">
+        <img src="profile.jpg" alt="Isha Chhabra portrait" class="profile-pic-large" />
+      </div>
+
+      <!-- Name / Title / Position Right -->
+      <div class="hero-content" style="margin-left: 3rem;">
+        <h1>Isha Chhabra</h1>
+        <div class="subtitle">Cognitive Neuroscientist | Ph.D. Candidate at the University of Oregon</div>
+        <p>Exploring memory, fMRI multimodal dataset, aphantasia, and hippocampal subregions.</p>
+      </div>
+
     </div>
   </section>
 
-  <!-- ===== Featured Intro ===== -->
+  <!-- ===== Welcome Intro ===== -->
   <section class="section">
     <h2>Welcome</h2>
-    <p>Welcome to my professional website. I study the cognitive and neural underpinnings of perception and spatial navigation in virtual environments. My work integrates <strong>functional MRI</strong>, <strong>VR experiments</strong>, and <strong>behavioral data analysis</strong> to understand how our brains process and remember complex visual scenes.</p>
+    <p>
+      Welcome to my professional website. I study the cognitive and neural underpinnings of perception and spatial navigation in virtual environments. My work integrates
+      <strong>functional MRI</strong>, <strong>VR experiments</strong>, and <strong>behavioral data analysis</strong> to understand how our brains process and remember complex visual scenes.
+    </p>
   </section>
 
-  <!-- ===== Highlight Section ===== -->
+  <!-- ===== Latest Updates ===== -->
   <section class="section">
     <h2>Latest Updates</h2>
     <ul>
@@ -70,7 +82,7 @@
 
   <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2025 Isha Chhabra. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Isha Chhabra. All rights reserved.</p>
     <div class="footer-links">
       <a href="cv.pdf" target="_blank">CV</a>
       <a href="https://www.linkedin.com/in/ishachhabra111" target="_blank">LinkedIn</a>
@@ -80,6 +92,11 @@
       <a href="https://bsky.app/profile/ishachhabra.bsky.social" target="_blank">Bluesky</a>
     </div>
   </footer>
+
+  <script>
+    // Auto-update year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>

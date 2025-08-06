@@ -17,62 +17,54 @@
 <body>
 
   <!-- ===== Header / Navigation ===== -->
-<header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html" class="active">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-  <!-- ===== Hero Section ===== -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="profile.jpg" alt="Isha Chhabra portrait" />
-      <h1>Isha Chhabra</h1>
-      <p>Cognitive Neuroscientist | Ph.D. Candidate at the University of Oregon<br>
-         Exploring memory, decision making, emotions, and aphantasia.</p>
-    </div>
-  </section>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html" class="active">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- ===== Main Content ===== -->
- <section class="section">
-  <h2>Papers</h2>
-  <ul>
-     Long-term, reliable, at-home sleep electroencephalography assessment in young and older adults: 
-      a validation study of a novel, wireless, soft electronics sleep monitoring system. 
-      <em>JMIR mHealth and uHealth</em> (submitted).
-    <!-- Add more papers as needed -->
-  </ul>
-</section>
+  <section class="section">
+    <h2>Papers</h2>
+    <ul>
+      <li>
+        Long-term, reliable, at-home sleep electroencephalography assessment in young and older adults: 
+        a validation study of a novel, wireless, soft electronics sleep monitoring system. 
+        <em>JMIR mHealth and uHealth</em> (submitted).
+      </li>
+      <!-- Add more papers here -->
+    </ul>
+  </section>
 
-<section class="section">
-  <h2>Posters</h2>
-  <ul>
-    <li>Chhabra, I., Duarte, A. (2024). Sleep and episodic memory across lifespan. <em>APSS Sleep Conference</em> Poster.</li>
-    <li>
-      Saha, S., Chhabra, I., Wachnin, A., Kim, H., Yeo, W., Trotti, L. M., &amp; Duarte, A. (2024).
-      An at-home, wireless, soft electronics sleep monitoring system for long-term, reliable sleep assessment in young and older adults.
-      <em>APSS Sleep Conference</em> Poster.
-      <a href="Sleep Conference Poster.pdf" target="_blank">[Poster PDF]</a>
-    <li>
-      “Individual Differences in Habitual Sleep Discontinuity Predict Memory Consolidation and Supporting Neural Activity”. 
-      Chuu Nyan, Sahana Ram, Isha Chhabra, AJ Wachin, Soroush Mirjalili, Audrey Duarte. 
-      <em>Poster</em>.
-    <!-- Add more posters as needed -->
-  </ul>
-</section>
+  <section class="section">
+    <h2>Posters</h2>
+    <ul>
+      <li>Chhabra, I., Duarte, A. (2024). Sleep and episodic memory across lifespan. <em>APSS Sleep Conference</em> Poster.</li>
+      <li>
+        Saha, S., Chhabra, I., Wachnin, A., Kim, H., Yeo, W., Trotti, L. M., &amp; Duarte, A. (2024).
+        An at-home, wireless, soft electronics sleep monitoring system for long-term, reliable sleep assessment in young and older adults.
+        <em>APSS Sleep Conference</em> Poster.
+        <a href="Sleep Conference Poster.pdf" target="_blank">[Poster PDF]</a>
+      </li>
+      <li>
+        “Individual Differences in Habitual Sleep Discontinuity Predict Memory Consolidation and Supporting Neural Activity”. 
+        Chuu Nyan, Sahana Ram, Isha Chhabra, AJ Wachin, Soroush Mirjalili, Audrey Duarte. 
+        <em>Poster</em>.
+      </li>
+      <!-- Add more posters here -->
+    </ul>
   </section>
 
   <!-- ===== Footer ===== -->
-<footer>
-    <p>&copy; 2025 Isha Chhabra. All rights reserved.</p>
+  <footer>
+    <p>&copy; <span id="year"></span> Isha Chhabra. All rights reserved.</p>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/ishachhabra111" target="_blank">LinkedIn</a>
       <a href="https://github.com/ishachhabra1" target="_blank">GitHub</a>
@@ -82,6 +74,10 @@
     </div>
   </footer>
 
+  <script>
+    // Auto-update year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
-
