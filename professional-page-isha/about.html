@@ -12,47 +12,324 @@
 
   <!-- ===== Fonts & Styles ===== -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* ===== Import Modern Fonts ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+    /* ===== General Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== Body Styling ===== */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #222;
+      background: linear-gradient(180deg, #fdfbfb 0%, #ebedee 100%);
+      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    /* ===== Navigation ===== */
+    header {
+      background: #fff;
+      padding: 1rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #444;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #3b82f6; /* bright blue */
+      color: white;
+    }
+
+    /* ===== Image Slider ===== */
+    .image-slider {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 400px; /* Fixed height */
+      margin: 2rem auto;
+      overflow: hidden;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-slider .slide {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      border-radius: 12px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* This ensures images fill the container while maintaining aspect ratio */
+      top: 0;
+      left: 0;
+    }
+
+    .image-slider .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    /* ===== Section Styling ===== */
+    .section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1.5rem 2rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+    }
+
+    .section p, .section li {
+      font-size: 1rem;
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .section ul {
+      padding-left: 1.5rem;
+      list-style-type: disc;
+    }
+
+    .section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== Education Entry Styling ===== */
+    .edu-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .edu-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .edu-info {
+      flex: 1;
+    }
+
+    .edu-info strong {
+      color: #1e293b;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .edu-year {
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    .gpa {
+      font-weight: 600;
+      color: #3b82f6;
+      font-size: 1rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      max-width: 1200px;
+      margin: 3rem auto 1rem;
+      padding: 1rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .footer-links {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      .edu-entry {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      
+      .section {
+        padding: 1rem 1.5rem;
+      }
+
+      .image-slider {
+        height: 300px; /* Smaller height on mobile */
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- ===== Header / Navigation ===== -->
-<header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- ===== Main Content ===== -->
   <section class="section">
     <h2>About Me</h2>
-    <p>Hello! I’m Isha Chhabra, a cognitive neuroscientist interested in memory, decision making, emotions, and aphantasia. My research focuses on understanding how the brain processes and remembers complex visual and spatial information using VR and fMRI.</p>
-    <p>I am currently pursuing my Ph.D. at the University of Oregon, working with Dr. Benjamin Hutchinson. Welcome to my professional website!</p>
+    <p style="margin-bottom: 20px;">
+      Hello, I'm Isha Chhabra! My journey began with a simple fascination for understanding how our memories are shaped by the world around us. This has led me down a path of unraveling the hidden neural stories within us.
+    </p>
+
+    <p>
+      Outside the lab, I find that the same curiosity that fuels my research also leads me to explore new hiking trails, experiment with a new recipe, or planning my next adventure abroad! I enjoy finding a new perspective, whether it's through a competitive game of pickleball or my community work with organizations like S.M.I.L.E. and the United Nations Foundation. These passions for exploration and service are what drive me to make a meaningful impact every day!
+    </p>
   </section>
 
-  <section class="section">
+  <!-- ===== Image Slider ===== -->
+  <div class="image-slider">
+    <img class="slide active" src="images/image1.jpg" alt="Image 1 - Crater Lake" />
+    <img class="slide" src="images/image2.jpg" alt="Image 2 - Blue Pool" />
+    <img class="slide" src="images/image3.jpg" alt="Image 3 - Penang Mural" />
+    <img class="slide" src="images/image4.jpg" alt="Image 4 - Hobbiton" />
+    <img class="slide" src="images/image5.jpg" alt="Image 5 - Austria" />
+    <img class="slide" src="images/image6.jpg" alt="Image 6 - Austria" />
+    <img class="slide" src="images/image7.jpg" alt="Image 7 - Austria" />
+    <img class="slide" src="images/image8.jpg" alt="Image 8 - Tokatee Falls" />
+    <img class="slide" src="images/image9.jpg" alt="Image 9 - North Cascades" />
+    <img class="slide" src="images/image10.jpg" alt="Image 10 - Budapest" />
+    <img class="slide" src="images/image11.jpg" alt="Image 11 - Africa" />
+    <img class="slide" src="images/image12.jpg" alt="Image 12 - Arches National Park" />
+    <img class="slide" src="images/image13.jpg" alt="Image 13 - Arches National Park" />
+    <img class="slide" src="images/image14.jpg" alt="Image 14 - Scuba Diving" />
+    <img class="slide" src="images/image15.jpg" alt="Image 15 - New Zealand" />
+    <img class="slide" src="images/image16.jpg" alt="Image 16 - Tulip Farm" />
+    <img class="slide" src="images/image17.jpg" alt="Image 17 - Sunset" />
+    <img class="slide" src="images/image18.jpg" alt="Image 18 - Africa" />
+  </div>
+
+  <!-- ===== Education ===== -->
+  <section class="section" id="education">
     <h2>Education</h2>
-    <p>B.A. Neuroscience minoring in Healthcare Communications at the University of Texas, at Austin</p>
-    <p>Ph.D. Candidate at the University of Oregon</p>
+
+    <div class="edu-entry">
+      <div class="edu-info">
+        <strong>University of Oregon</strong> — Ph.D. Student in Cognitive Neuroscience, Specialization in Data Science
+        <span class="edu-year"> (Expected Graduation May 2029)</span>
+      </div>
+      <div class="gpa">GPA: 4.08</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-info">
+        <strong>University of Texas at Austin</strong> — Bachelor of Science in Neuroscience with Minor in Health Communication
+        <span class="edu-year"> (May 2024)</span>
+      </div>
+      <div class="gpa">GPA: 3.97</div>
+    </div>
   </section>
+
   <!-- ===== Footer ===== -->
- <footer>
+  <footer>
     <p>&copy; 2025 Isha Chhabra. All rights reserved.</p>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/ishachhabra111" target="_blank">LinkedIn</a>
       <a href="https://github.com/ishachhabra1" target="_blank">GitHub</a>
-      <a href="https://hulacon.uoregon.edu/people/" target="_blank">Lab Website</a>
       <a href="mailto:ishachhabra1000@gmail.com">Email</a>
       <a href="https://bsky.app/profile/ishachhabra.bsky.social" target="_blank">Bluesky</a>
     </div>
   </footer>
+
+  <!-- ===== Image Slider Script ===== -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    // Handle image load errors
+    slides.forEach((slide, index) => {
+      slide.onerror = () => {
+        console.log(`Failed to load image: ${slide.src}`);
+        slide.style.display = 'none';
+      };
+    });
+
+    // Show the first slide initially
+    showSlide(currentSlide);
+
+    // Start auto-advance
+    setTimeout(() => {
+      setInterval(nextSlide, 4000);
+    }, 1000);
+  </script>
 
 </body>
 </html>

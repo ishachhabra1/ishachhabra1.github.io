@@ -233,3 +233,35 @@ footer {
     max-width: 90%;
   }
 }
+
+/* ===== Downloadable CV Button Styling ===== */
+.cv-download {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cv-download a {
+  display: inline-block;
+  background-color: #3b82f6; /* bright blue */
+  color: white;              /* white text */
+  font-family: Georgia, serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgb(59 130 246 / 0.3);
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.cv-download a:hover,
+.cv-download a:focus {
+  background-color: #2563eb; /* slightly darker blue */
+  box-shadow: 0 6px 12px rgb(37 99 235 / 0.5);
+  outline: none;
+  cursor: pointer;
+  color: white; /* keep text white on hover */
+}
+
+
